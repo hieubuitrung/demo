@@ -1,0 +1,225 @@
+﻿@import '_variable.scss';
+
+.modal-logIn {
+    &--header {
+        display: flex;
+        align-items: center;
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 50px;
+            }
+
+            h2 {
+                color: $main-color;
+                margin-left: 10px;
+                margin-bottom: 0;
+                font-size: 24px;
+                font-weight: 400;
+            }
+        }
+
+        > button {
+            margin-right: 0 !important;
+            outline: none;
+
+            > span {
+                font-size: 30px;
+            }
+        }
+
+        > button:hover > span {
+            color: $primary-color;
+        }
+    }
+
+    &--body {
+        .login {
+
+            &__right {
+                position: relative;
+
+                &__logo--image {
+                    margin-top: 70px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &__copyright {
+                    margin-top: 70px;
+
+                    span {
+                        color: $primary-color;
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            &__left {
+                padding: 0 30px;
+                position: relative;
+
+                &__form {
+
+                    h2 {
+                        text-align: center;
+                        color: $main-color;
+                        font-weight: 700;
+                        margin-bottom: 40px;
+                    }
+
+                    &__input {
+                        position: relative;
+
+                        input {
+                            height: 60px;
+                            padding-left: 60px;
+                            border: 2px solid $primary-color;
+                        }
+
+                        input:focus {
+                            outline: none;
+                        }
+
+                        i {
+                            position: absolute;
+                            top: 50%;
+                            left: 30px;
+                            transform: translateY(-50%);
+                            color: $primary-color;
+                        }
+                    }
+
+                    .form__feature {
+                        display: flex;
+                        justify-content: space-between;
+
+                        &--check {
+                            display: flex;
+                            align-items: center;
+                            // css checkbox
+
+                            .check--label {
+                                color: $primary-color;
+                                font-size: 16px;
+                                user-select: none;
+                                margin: 0 0 0 6px;
+                            }
+                        }
+
+                        &--forgot-password {
+                            a {
+                                color: $primary-color;
+                                margin-right: 30px;
+                                text-decoration: none;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+                    button {
+                        @include main-button;
+                    }
+
+                    &__create {
+                        margin-top: 30px;
+
+                        &--account {
+                            font-size: 18px;
+                            color: $primary-color;
+                            text-align: center;
+                            display: block;
+                        }
+
+                        span {
+                            color: $primary-color;
+                            display: block;
+                            text-align: center;
+                            font-size: 18px;
+                        }
+
+                        .society {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-top: 20px;
+
+                            a {
+                                margin: 0 10px;
+
+                                img {
+                                    width: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rules {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    margin-top: 48px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+
+                    a {
+                        font-size: 18px;
+                        color: $primary-color;
+                    }
+
+                    span {
+                        font-size: 18px;
+                        margin: 0 10px;
+                        font-weight: 200;
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+    }
+
+    
+}
+
+@include tablet {
+    .modal-logIn {
+        margin: 0 20px;
+
+        &--body {
+            .login__left {
+                .rules {
+                    position: unset;
+                }
+            }
+            .login__right {
+                display: none;
+            }
+        }
+    }
+
+}
+
+@include mobile {
+    .modal-logIn {
+        margin: 0 20px;
+
+        &--body {
+            .login__left {
+                .rules {
+                    position: unset;
+                }
+            }
+
+            .login__right {
+                display: none;
+            }
+        }
+    }
+}

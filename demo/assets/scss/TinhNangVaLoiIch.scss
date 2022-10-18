@@ -1,0 +1,144 @@
+﻿@import '_variable.scss';
+
+/*variable*/
+$bg-color-feature-item: #effff6;
+
+.feature {
+    margin-top: 20px;
+
+    h2 {
+        @include title-desktop;
+        color: $text-color;
+
+        span {
+            color: $primary-color;
+        }
+    }
+
+    p {
+        @include description-desktop;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__row {
+        &--item {
+            > div {
+                position: relative;
+                background-color: $bg-color-feature-item;
+                box-shadow: 0 3px 20px #e2e2e2;
+                border-radius: 10px;
+                text-align: center;
+                height: 480px;
+
+                h3 {
+                    padding: 40px 0 10px;
+                    @include sub-title-desktop;
+
+                    span {
+                        color: $primary-color;
+                    }
+                }
+
+                p {
+                    @include description-desktop;
+                }
+
+                div {
+                    position: absolute;
+                    background-size: contain;
+                    background-position: center;
+                    width: 300px;
+                    height: 200px;
+                    background-repeat: no-repeat;
+                    bottom: 40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .feature {
+
+
+        h2 {
+            @include title-tablet;
+            color: $text-color;
+
+        }
+
+        p {
+            @include description-tablet;
+            font-weight: 400;
+        }
+
+        &__row {
+            &--item {
+                margin-bottom: 40px;
+                > div {
+
+                    h3 {
+                        @include sub-title-tablet;
+                        span {
+
+                        }
+                    }
+
+                    p {
+                        @include description-tablet;
+                        font-weight: 400;
+                    }
+
+                    div {
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .feature {
+
+
+        h2 {
+            @include title-mobile;
+            color: $text-color;
+        }
+
+        p {
+            @include description-mobile;
+            font-weight: 400;
+        }
+
+        &__row {
+            &--item {
+                margin-bottom: 40px;
+
+                > div {
+                    height: 360px;
+                    h3 {
+                        @include sub-title-mobile;
+
+                        span {
+                        }
+                    }
+
+                    p {
+                        @include description-mobile;
+                        font-weight: 400;
+                    }
+
+                    div {
+                        height: 140px;
+                    }
+                }
+            }
+        }
+    }
+}

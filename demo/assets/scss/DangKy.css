@@ -1,0 +1,121 @@
+﻿/*color*/
+/*size display*/
+/*font*/
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif; }
+
+/*mixin*/
+.modal-signUp--header {
+  display: flex;
+  align-items: center; }
+  .modal-signUp--header .logo {
+    display: flex;
+    align-items: center; }
+    .modal-signUp--header .logo img {
+      width: 50px; }
+    .modal-signUp--header .logo h2 {
+      color: #1c676b;
+      margin-left: 10px;
+      margin-bottom: 0;
+      font-size: 24px;
+      font-weight: 400; }
+  .modal-signUp--header > button {
+    margin-right: 0 !important;
+    outline: none; }
+    .modal-signUp--header > button > span {
+      font-size: 30px; }
+
+.modal-signUp--body {
+  display: block; }
+  .modal-signUp--body .sign-up {
+    position: relative; }
+    .modal-signUp--body .sign-up .main-image {
+      width: 100%;
+      margin-top: 60px; }
+    .modal-signUp--body .sign-up #copyright {
+      color: #519546;
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 0; }
+    .modal-signUp--body .sign-up .sign-up__form {
+      margin-left: 30px; }
+      .modal-signUp--body .sign-up .sign-up__form h3 {
+        text-align: center;
+        color: #1c676b;
+        font-size: 40px; }
+      .modal-signUp--body .sign-up .sign-up__form form {
+        margin-top: 30px; }
+      .modal-signUp--body .sign-up .sign-up__form .form-group {
+        position: relative; }
+        .modal-signUp--body .sign-up .sign-up__form .form-group .form-control {
+          height: 50px;
+          font-size: 16px;
+          padding-left: 40px;
+          border-color: transparent transparent #519546 transparent;
+          outline: none; }
+        .modal-signUp--body .sign-up .sign-up__form .form-group i {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          font-size: 20px; }
+      .modal-signUp--body .sign-up .sign-up__form button {
+        font-size: 22px;
+        font-weight: 500;
+        padding: 12px 50px;
+        display: block;
+        margin: 24px auto 0;
+        background-color: #519546; }
+      .modal-signUp--body .sign-up .sign-up__form__more > span {
+        text-align: center;
+        color: #519546;
+        font-size: 20px;
+        display: block;
+        margin-top: 14px; }
+      .modal-signUp--body .sign-up .sign-up__form__more--social {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px; }
+        .modal-signUp--body .sign-up .sign-up__form__more--social--google, .modal-signUp--body .sign-up .sign-up__form__more--social--facebook {
+          display: flex;
+          align-items: center;
+          border: 1px solid #bdbdbd;
+          padding: 5px 10px; }
+          .modal-signUp--body .sign-up .sign-up__form__more--social--google img, .modal-signUp--body .sign-up .sign-up__form__more--social--facebook img {
+            width: 20px; }
+          .modal-signUp--body .sign-up .sign-up__form__more--social--google span, .modal-signUp--body .sign-up .sign-up__form__more--social--facebook span {
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 0;
+            padding-left: 10px;
+            font-weight: 200; }
+      .modal-signUp--body .sign-up .sign-up__form .rules {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 48px; }
+        .modal-signUp--body .sign-up .sign-up__form .rules a {
+          font-size: 18px;
+          color: #519546; }
+        .modal-signUp--body .sign-up .sign-up__form .rules span {
+          font-size: 18px;
+          margin: 0 10px;
+          font-weight: 200;
+          opacity: .7; }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .modal-signUp {
+    margin: 0 20px; }
+    .modal-signUp--body .sign-up .main-image {
+      display: none; }
+    .modal-signUp--body .sign-up #copyright {
+      display: none; } }
+
+@media (max-width: 479px) {
+  .modal-signUp {
+    margin: 0 20px; }
+    .modal-signUp--body .sign-up .main-image {
+      display: none; }
+    .modal-signUp--body .sign-up #copyright {
+      display: none; } }

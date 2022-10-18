@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Templates";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <link href="~/assets/scss/Templates.css" rel="stylesheet" />
+}
+
+@section scripts {
+    <script src="~/assets/js/Templates.js"></script>
+}
+
+<div class="templates">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-md-12 col-12">
+                <div class="templates__filter">
+                    <div class="templates__filter--search">
+                        <p>
+                            <h5>Tìm biểu mẫu phù hợp</h5>
+                            <button class="btn d-xl-none d-md-none" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                                <i class="fa-solid fa-caret-down"></i>
+                            </button>
+                        </p>
+                        <div class="collapse d-xl-block d-md-block" id="collapseFilter">
+                            <div class="">
+                                <input type="text" id="name-form" placeholder="Tìm kiếm ...">
+                                <select id="language" class="custom-select custom-select-lg mb-3">
+                                    <option value="" selected>Tất cả ngôn ngũ</option>
+                                    <option value="tiếng anh">Tiếng Anh</option>
+                                    <option value="tiếng việt">Tiếng Việt</option>
+                                </select>
+                                <select id="topic" class="custom-select custom-select-lg mb-3">
+                                    <option value="" selected>Tất cả chủ đề</option>
+                                    <option value="báo cáo">Báo cáo</option>
+                                    <option value="hóa đơn">Hóa đơn</option>
+                                    <option value="thống kê">Thống kê</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="templates__filter--sort">
+                        <h5>Sắp xếp</h5>
+                        <div class="radio-choose-active">
+                            <input type="checkbox" checked="checked" id="new" />
+                            <label for="new">Mới cập nhật</label>
+                        </div>
+
+                        <div class="radio-choose-active">
+                            <input type="checkbox" id="most-popular" />
+                            <label for="most-popular">Được dùng nhiều nhất</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-md-12 col-12">
+                <div class="templates__forms">
+                    <h2>Danh sách biểu mẫu tiếng Anh/Việt chuẩn 2022</h2>
+                    <p>Các biểu mẫu được thiết kế theo chuẩn, theo các chủ đề. Phù hợp với người đi làm và doanh nghiệp.</p>
+                    <div class="row templates__forms__group">
+
+                    </div>
+                </div>
+
+        
+                <div class="templates__pagination">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+</div>

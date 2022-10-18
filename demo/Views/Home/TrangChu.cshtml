@@ -1,0 +1,340 @@
+﻿
+@{
+    ViewBag.Title = "Trang Chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link href="~/assets/scss/TrangChu.css" rel="stylesheet" />
+}
+
+@section scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/assets/js/TrangChu.js"></script>
+}
+
+<div>
+    <div class="container container__introduce">
+        <h3>Nơi tập chung tất cả các biểu mẫu bạn cần có cho lập kế hoạch xây dựng doanh nghiệp, tổ chức, quản lý, tài chính và phát triển doanh nghiệp của bạn!</h3>
+        <div class="container__introduce--image">
+            <img src="~/assets/images/introduce-img.jpg" alt="" />
+            <div class="container__introduce--image--text">
+                <h5>Nhanh chóng và dễ dàng tạo bất cứ loại tài liệu nào mà doanh nghiệp của bạn cần</h5>
+                <button>BẮT ĐẦU DÙNG THỬ</button>
+                <p>Tất cả tài liệu có thể tùy chỉnh theo ý muốn và tương thích với.</p>
+                <div class="container__introduce--image--text__sp-utilities">
+                    <img src="~/assets/images/integrations-google-docs-logo.png" alt="" />
+                    <img src="~/assets/images/Microsoft-Word-Simbolo.png" alt="" />
+                    <img src="~/assets/images/Microsoft_Excel.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container__forms">
+        <h3>Đa dạng mẫu biểu phù hợp với mọi loại hình doanh nghiệp</h3>
+        <p>Với 8 mô-dun quản lý kinh doanh cốt lõi</p>
+
+        <div class="row container__forms--list">
+            <div class="col-xl-3 col-md-6">
+                <div class="form--item">
+                    <img src="~/assets/images/modul1.png" alt="" />
+                    <h6>Bộ kế hoạch kinh doanh</h6>
+                    <span style="background-color: #fec904;"></span>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="form--item">
+                    <img src="~/assets/images/modul2.png" alt="" />
+                    <h6>Bộ pháp chế</h6>
+                    <span style="background-color: #ec000d;"></span>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="form--item">
+                    <img src="~/assets/images/modul3.png" alt="" />
+                    <h6>Nhân sự</h6>
+                    <span style="background-color: #7552a4;"></span>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="form--item">
+                    <img src="~/assets/images/modul4.png" alt="" />
+                    <h6>Tài liệu cơ bản</h6>
+                    <span style="background-color: #03abcf;"></span>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="form--item">
+                    <img src="~/assets/images/modul5.png" alt="" />
+                    <h6>Tài chính - Kế toán</h6>
+                    <span style="background-color: #20696d;"></span>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="form--item">
+                    <img src="~/assets/images/modul6.png" alt="" />
+                    <h6>Bán hàng - Tiếp thị</h6>
+                    <span style="background-color: #6eb405;"></span>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="form--item">
+                    <img src="~/assets/images/modul7.png" alt="" />
+                    <h6>Quản trị</h6>
+                    <span style="background-color: #ff8c00;"></span>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="form--item">
+                    <img src="~/assets/images/modul8.png" alt="" />
+                    <h6>Sản phẩm - Vận hành</h6>
+                    <span style="background-color: #d992a2;"></span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container__create-document">
+        <div class="container">
+            <h3>Tạo tài liệu chuyên nghiệp chỉ với vài thao tác đơn giản</h3>
+            <div class="row container__create-document--procedure">
+                <div class="col-xl-3 col-md-6 col-6">
+                    <div class="create-document--step">
+                        <h6>TÌm kiếm mẫu</h6>
+                        <p>1</p>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 col-6">
+                    <div class="create-document--step">
+                        <h6>Tải xuống</h6>
+                        <p>2</p>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 col-6">
+                    <div class="create-document--step">
+                        <h6>Chỉnh sửa</h6>
+                        <p>3</p>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6 col-6">
+                    <div class="create-document--step">
+                        <h6>Lưu và in ấn</h6>
+                        <p>4</p>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container__companion">
+        <div class="container">
+            <h3>Chúng tôi đồng hành cùng bạn để giúp bạn:</h3>
+            <div class="row container__companion--list">
+                <div class="col-xl-3 col-md-6">
+                    <img src="~/assets/images/thoigian.png" alt="" />
+                    <h5>Tiết kiệm thời gian</h5>
+                    <p>Tăng tốc độ hoàn thành tài liệu theo các bộ mẫu tiêu chuẩn.</p>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <img src="~/assets/images/chiphi.png" alt="" />
+                    <h5>Tiết kiệm chi phí</h5>
+                    <p>Giảm thiểu sai sót tránh lãng phí.</p>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <img src="~/assets/images/phattrien.png" alt="" />
+                    <h5>Phát triển tổ chức</h5>
+                    <p>nâng cao hiệu suất hoạt động doanh nghiệp của bạn.</p>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <img src="~/assets/images/hotro.png" alt="" />
+                    <h5>Hỗ trợ cộng đồng</h5>
+                    <p>Đóng góp cùng DocTemp với các chương trình thiện nguyện.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container__standard">
+        <div class="container">
+            <h3>Hệ thống tài liệu được xây dựng khoa học theo các tiêu chuẩn</h3>
+            <p class="sub-title">Chủ doanh nghiệp &bull; Doanh nhân &bull; CEO &bull; VP/Giám đốc/Quản lý &bull; Thư ký</p>
+            <div class="row container__standard--list multiple-items slick">
+                <div class="col-xl-3 col-md-6 standard-item">
+                    <img src="~/assets/images/tailieumau.png" />
+                    <p>2,000+ Tài liệu mẫu</p>
+                </div>
+
+                <div class="col-xl-3 col-md-6 standard-item">
+                    <img src="~/assets/images/taoboichuyengia.png" />
+                    <p>Tạo bởi các chuyên gia</p>
+                </div>
+
+                <div class="col-xl-3 col-md-6 standard-item">
+                    <img src="~/assets/images/chuyennghiep.png" />
+                    <p>Chuyên nghiệp</p>
+                </div>
+
+                <div class="col-xl-3 col-md-6 standard-item">
+                    <img src="~/assets/images/dedangsoanthao.png" />
+                    <p>Dễ dàng soạn thảo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container__document-top">
+        <div class="container">
+            <h3>Top danh mục tài liệu mẫu bắt đầu cho doanh nghiệp của bạn</h3>
+            <div class="row container__document-top--list">
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row container__document-top--list">
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row container__document-top--list">
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row container__document-top--list">
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="document-top--item">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Kê hoạch kinh doanh</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container__price">
+        <div class="container__price--logo">
+            <img src="~/assets/images/logo.png" />
+            <h2>DocTemp.vn</h2>
+        </div>
+        <p>Thư viện tiêu chuẩn với 2.000+ mẫu tài liệu kinh doanh và pháp lý</p>
+        <span>Chỉ với 568.000 đ/tháng</span>
+        <button>Thanh toán ngay</button>
+    </div>
+</div>

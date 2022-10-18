@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- font awesome -->
+    <script src="../assets/lib/jquery3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link href="../assets/scss/DangNhap.css" rel="stylesheet" type="text/css" />
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Đăng Nhập - HMI</title>
+</head>
+<body>
+    <content>
+        <div class="container login">
+            <div class="row">
+                <div class="col-xl-6 login__right">
+                    <div class="login__right__logo">
+                        <div class="login__right__logo--icon">
+                            <img src="../assets/images/logo.png" alt="">
+                            <h3>DocTemp.vn</h3>
+                        </div>
+                        <div class="login__right__logo--image">
+                            <img src="../assets/images/image.png" alt="">
+                        </div>
+                    </div>
+                    <div class="login__right__copyright">
+                        <span>Copyright Reserved &copy; 2022 HMI JSC</span>
+                    </div>
+                </div>
+
+                <div class="col-xl-6 login__left">
+                    <div class="login__left__form">
+                        <h2>Đăng nhập</h2>
+                        <form>
+                            <div class="form-group login__left__form__input">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="email" name="email" class="form-control form__email" id="email" placeholder="admin@gmail.com">
+                            </div>
+
+                            <div class="form-group login__left__form__input">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" name="password" class="form-control form__password" id="password" placeholder="&lowast; &lowast; &lowast; &lowast; &lowast; &lowast; &lowast; &lowast;">
+                            </div>
+                            <div class="form__feature">
+                                <div class="form-check form__feature--check">
+                                    <input type="checkbox" class="check--input" id="memorize-login">
+                                    <label class="check--label" for="memorize-login">Ghi nhớ đăng nhập</label>
+                                </div>
+                                <div class="form-forgot-password form__feature--forgot-password">
+                                    <a href="">Quên mật khẩu ?</a>
+                                </div>
+                            </div>
+
+                            <button type="button" id="btn-login" class="btn btn-primary">Đăng nhập</button>
+                        </form>
+
+                        <div class="login__left__form__create">
+                            <a href="./DangKy.html" class="login__left__form__create--account">Tạo tài khoản mới ? Đăng ký</a>
+                            <!--@Html.ActionLink("Tạo tài khoản mới ? Đăng ký", "DangKy", "Home", new {@class = "login__left__form__create--account" })-->
+                            <span>Hoặc</span>
+                            <div class="society">
+                                <a href="">
+                                    <img src="../assets/images/Google__G__Logo.svg.png" alt="">
+                                </a>
+                                <a href="">
+                                    <img src="../assets/images/Twitter-Logo-New-.png" alt="">
+                                </a>
+                                <a href="">
+                                    <img src="../assets/images/facebook-icon-1024x1024.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rules">
+                        <a href="">Điều khoản và Điều kiện</a>
+                        <span>|</span>
+                        <a href="">Chính sách bảo mật</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <script src="../assets/js/DangNhap.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿[
+  {
+    "outputFile": "assets/scss/style.css",
+    "inputFile": "assets/scss/style.scss"
+  },
+  {
+    "outputFile": "assets/scss/DangKy.css",
+    "inputFile": "assets/scss/DangKy.scss"
+  },
+  {
+    "outputFile": "assets/scss/base.css",
+    "inputFile": "assets/scss/base.scss"
+  },
+  {
+    "outputFile": "assets/scss/_base.css",
+    "inputFile": "assets/scss/_base.scss"
+  },
+  {
+    "outputFile": "assets/scss/DangNhap.css",
+    "inputFile": "assets/scss/DangNhap.scss"
+  },
+  {
+    "outputFile": "assets/scss/Home.css",
+    "inputFile": "assets/scss/Home.scss"
+  },
+  {
+    "outputFile": "assets/scss/TrangChu.css",
+    "inputFile": "assets/scss/TrangChu.scss"
+  },
+  {
+    "outputFile": "assets/scss/Main.css",
+    "inputFile": "assets/scss/Main.scss"
+  },
+  {
+    "outputFile": "assets/scss/TinhNangVaLoiIch.css",
+    "inputFile": "assets/scss/TinhNangVaLoiIch.scss"
+  },
+  {
+    "outputFile": "assets/scss/Templates.css",
+    "inputFile": "assets/scss/Templates.scss"
+  }
+]
