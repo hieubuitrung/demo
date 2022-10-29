@@ -86,7 +86,8 @@ header {
 
 footer {
   background-color: #f5f6f9;
-  margin-top: 40px; }
+  position: relative;
+  top: 54px; }
   footer .footer {
     padding-top: 80px; }
     footer .footer .introduce h6, footer .footer .doctemp h6 {

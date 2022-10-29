@@ -8,7 +8,8 @@
 /*mixin*/
 /*variable*/
 .feature {
-  margin-top: 20px; }
+  margin-top: 20px;
+  margin-bottom: 34px; }
   .feature h2 {
     color: #1c676b;
     font-size: 28px;

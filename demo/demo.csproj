@@ -165,6 +165,7 @@
     <Content Include="assets\js\DangKy.js" />
     <Content Include="assets\js\DangNhap.js" />
     <Content Include="assets\js\Main.js" />
+    <Content Include="assets\js\Price.js" />
     <Content Include="assets\js\Templates.js" />
     <Content Include="assets\js\TrangChu.js" />
     <Content Include="assets\lib\bootstrap4\css\bootstrap-grid.css" />
@@ -198,6 +199,12 @@
     </Content>
     <Content Include="assets\scss\Main.min.css">
       <DependentUpon>Main.css</DependentUpon>
+    </Content>
+    <Content Include="assets\scss\Price.css">
+      <DependentUpon>Price.scss</DependentUpon>
+    </Content>
+    <Content Include="assets\scss\Price.min.css">
+      <DependentUpon>Price.css</DependentUpon>
     </Content>
     <Content Include="assets\scss\Templates.css">
       <DependentUpon>Templates.scss</DependentUpon>
@@ -246,6 +253,7 @@
     <Content Include="assets\scss\Main.scss" />
     <Content Include="assets\scss\TinhNangVaLoiIch.scss" />
     <Content Include="assets\scss\Templates.scss" />
+    <Content Include="assets\scss\Price.scss" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -277,6 +285,7 @@
     <Content Include="Views\Home\TrangChu.cshtml" />
     <Content Include="Views\Home\TinhNangVaLoiIch.cshtml" />
     <Content Include="Views\Home\Templates.cshtml" />
+    <Content Include="Views\Home\Price.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

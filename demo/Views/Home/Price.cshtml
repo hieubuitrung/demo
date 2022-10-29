@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Price";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles {
+    <link href="~/assets/scss/Price.css" rel="stylesheet" />
+}
+
+@section scripts {
+    <script src="~/assets/js/Templates.js"></script>
+    <script src="~/assets/js/Price.js"></script>
+}
+
+<div class="price">
+    <div class="container">
+        <div class="price__title">
+            <h2>Bảng giá template</h2>
+            <p>Chỉ với chi phí rất thấp doanh nghiệp của bạn đã sở hữu những template nổi bật được nhiều doanh nghiệp có tiếng tin dùng.</p>
+        </div>
+        <table class="table table-hover table-bordered price__table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Hình ảnh</th>
+                    <th scope="col">
+                        Tên
+                        <i v="name" class="fa-solid fa-sort sort"></i>
+                    </th>
+                    <th scope="col">
+                        Chủ đề
+                        <i v="topic" class="fa-solid fa-sort sort"></i>
+                    </th>
+                    <th scope="col">
+                        Giá
+                        <i v="price" class="fa-solid fa-sort sort"></i>
+                    </th>
+                    <th scope="col">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <!-- Large modal -->
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <img src="~/assets/images/form-1.png" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

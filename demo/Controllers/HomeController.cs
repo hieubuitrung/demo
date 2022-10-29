@@ -31,6 +31,11 @@ namespace demo.Controllers
                 url: "templates",
                 defaults: new { controller = "Home", action = "Templates" }
             );
+            routes.MapRoute(
+                name: "price",
+                url: "price",
+                defaults: new { controller = "Home", action = "Price" }
+            );
         }
 
         public ActionResult TrangChu()
@@ -44,6 +49,11 @@ namespace demo.Controllers
         }
 
         public ActionResult Templates()
+        {
+            return View();
+        }
+
+        public ActionResult Price()
         {
             return View();
         }

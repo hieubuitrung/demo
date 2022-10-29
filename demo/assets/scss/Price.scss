@@ -1,0 +1,60 @@
+﻿@import '_variable.scss';
+
+@mixin ic-sort {
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.price {
+    &__title {
+        h2 {
+            @include title-desktop;
+            margin: 30px 0 5px;
+        }
+
+        p {
+            @include description-desktop;
+        }
+    }
+
+    .price__table {
+        thead {
+            th {
+                color: #fff;
+                background-color: $main-color;
+                border-color: #dee2e6;
+                position: relative;
+                i {
+                    @include ic-sort;
+                    opacity: .5;
+                    transition: opacity .1s ease-in-out;
+                }
+                i:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                td {
+                    img {
+                        width: auto;
+                        height: 40px;
+                        box-shadow: 1px 2px 3px #ccc;
+                        cursor: pointer;
+                    }
+
+                    button {
+                        background-color: $primary-color;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

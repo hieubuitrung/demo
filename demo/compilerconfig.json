@@ -38,5 +38,9 @@
   {
     "outputFile": "assets/scss/Templates.css",
     "inputFile": "assets/scss/Templates.scss"
+  },
+  {
+    "outputFile": "assets/scss/Price.css",
+    "inputFile": "assets/scss/Price.scss"
   }
 ]

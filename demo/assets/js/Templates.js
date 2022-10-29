@@ -1,90 +1,91 @@
-﻿var Templates = (function () {
+﻿
+var Templates = (function () {
     var mol = {}
     mol.init = function () {
         var B = $('body');
-        var current_page = 1;
-        var record_per_page = 3;
-        var dt = mol.getData();
-        var data = mol.getDataPagination(current_page, record_per_page);
-        var dtFil = dt;
+        var data = mol.getData();
+        var dataFil = data;
+        var name = '', language = '', topic = '';
+        var show_per_page = 3;
+        var pages = 3;
+        var current_page = 0;
+        var number_of_items = data.length;
+        var number_of_pages = Math.ceil(number_of_items / show_per_page);
 
         rendView(data);
-        showPages(dt, current_page, record_per_page);
+        mol.pagination(data, current_page, show_per_page, pages);
 
         B.delegate('#name-form', 'keydown', function (e) {
-            //var dtFilter = [];
-            var val = e.target.value.trim().toLowerCase();
+            name = e.target.value.trim().toLowerCase();
             // lấy code của phím enter
             var keycode = (e.keyCode ? e.keyCode : e.which);
             if (keycode == '13') {
                 // dùng filter để lọc data
-                dtFil = dtFil.filter(function (item) {
-                    return (item.name.toLowerCase().search(val) != -1 ? true : false);
-                })
-                data = mol.getDataPagination(current_page, record_per_page);
-                rendView(data);
-                showPages(dtFil, current_page, record_per_page);
+                dataFil = filData(data, name, language, topic);
+                number_of_items = dataFil.length;
+                rendView(dataFil);
+
+                // phân trang
+                current_page = 0;
+                $('.page-item.next').removeClass('disabled');
+                mol.pagination(dataFil, current_page, show_per_page, pages);
             }
         })
 
         B.delegate('#language', 'change', function (e) {
-            //var dtFilter = [];
-            var val = e.target.value.trim().toLowerCase();
-            if (val.length === 0) {
-                dtFil = dt;
-            } else {
-                dtFil = dt.filter(function (item) {
-                    return (item.language.toLowerCase().search(val) != -1 ? true : false);
-                })
-            }
+            
+            language = e.target.value.trim().toLowerCase();
+            dataFil = filData(data, name, language, topic);
+            number_of_items = dataFil.length;
+            rendView(dataFil);
 
-            data = mol.getDataPagination(current_page, record_per_page);
-            rendView(data);
-            showPages(dtFil, current_page, record_per_page);
+            // phân trang
+            current_page = 0;
+            $('.page-item.next').removeClass('disabled');
+            mol.pagination(dataFil, current_page, show_per_page, pages);
         })
 
         B.delegate('#topic', 'change', function (e) {
-            //var dtFilter = [];
-            var val = e.target.value.trim().toLowerCase();
-            if (val.length === 0) {
-                dtFil = dt;
-            } else {
-                dtFil = dtFil.filter(function (item) {
-                    return (item.topic.toLowerCase().search(val) != -1 ? true : false);
-                })
-            }
-            console.log(val);
+            topic = e.target.value.trim().toLowerCase();
+            dataFil = filData(data, name, language, topic);
+            number_of_items = dataFil.length;
+            rendView(dataFil);
 
-            data = mol.getDataPagination(current_page, record_per_page);
-            rendView(data);
-            showPages(dtFil, current_page, record_per_page);
+            // phân trang
+            current_page = 0;
+            $('.page-item.next').removeClass('disabled');
+            mol.pagination(dataFil, current_page, show_per_page, pages)
         })
 
-        B.delegate('li.prev', 'click', function () {
-            if (current_page > 1) {
-                current_page = current_page-- > 0 ? current_page-- : 1;
-                data = mol.getDataPagination(current_page, record_per_page);
-                rendView(data);
-                showPages(dtFil, current_page, record_per_page);
+        B.delegate('.page-item.prev', 'click', function (e) {
+            //number_of_pages = Math.ceil(number_of_items / show_per_page);
+
+            if (current_page > 0) {
+                current_page--;
+                $('.page-item.next').removeClass('disabled');
+                mol.pagination(dataFil, current_page, show_per_page, pages);
+            } else {
                 
             }
         })
 
-        B.delegate('li.next', 'click', function () {
-            if (current_page < Math.ceil(dtFil.length / record_per_page)) {
-                current_page = current_page++ < dtFil.length ? current_page++ : current_page;
-                data = mol.getDataPagination(current_page, record_per_page);
-                rendView(data);
-                showPages(dtFil, current_page, record_per_page);
+        B.delegate('.page-item.next', 'click', function (e) {
+            number_of_pages = Math.ceil(number_of_items / show_per_page);
+            // xử lý chuyển trang
+            if (current_page < number_of_pages - 1) {
+                current_page++;
+                $('.page-item.prev').removeClass('disabled');
+                mol.pagination(dataFil, current_page, show_per_page, pages);
+            } else {
+               
             }
         })
 
-        B.delegate('.pagination li[class=page-item]', 'click', function () {
+        B.delegate('.page-item.page', 'click', function (e) {
             current_page = parseInt($(this).attr('value'));
-            data = mol.getDataPagination(current_page, record_per_page);
-            rendView(data);
-            showPages(dtFil, current_page, record_per_page);
+            mol.pagination(dataFil, current_page, show_per_page, pages);
         })
+
     }
 
     mol.getData = function () {
@@ -104,83 +105,84 @@
         return data;
     }
 
-    // lấy data giới hạn theo page
-    mol.getDataPagination = function (page, limit) {
-        var data = '';
-        $.ajax({
-            async: false,
-            type: 'GET',
-            dataType: "json",
-            url: `https://634388b23f83935a7854d4e6.mockapi.io/api/forms?page=${page}&limit=${limit}`,
-            success: function (d) {
-                console.log(d);
-                data = d;
-            },
-            error: function () {
-                alert('error');
-            }
-        })
-        return data;
-    }
-})();
+    // phân trang
+    mol.pagination = function (data, current_page, show_per_page, pages) {
+        var number_of_pages = Math.ceil(data.length / show_per_page);
 
+        // css for item template
+        $('.templates__forms__group--item').addClass('d-none').slice(current_page * show_per_page, (current_page + Math.floor(pages / 2)) * show_per_page).removeClass('d-none');
 
-function showPages(dt, current_page, record_per_page) {
-    var num_pages = Math.ceil(dt.length / record_per_page);
-    var items = 3;
-    var li_tag = '';
-    var html = '';
-    if (current_page <= Math.ceil(items / 2)) {
-        for (var i = 1; i <= items; i++) {
-            li_tag += `<li class="page-item" value="${i}">
-                        <a class="page-link">${i}</a>
-                    </li>`;
+        var html_prev = `<li class="page-item prev">
+                <button class="page-link" tabindex="-1">Previous</button>
+            </li>`;
+        var html_next = `<li class="page-item next">
+                <button class="page-link">Next</button>
+            </li>`;
+
+        // rend number_page
+        var html_pages = ``;
+        for (var i = 0; i < number_of_pages; i++) {
+            html_pages += `<li class="page-item page" value="${i}"><a class="page-link">${i + 1}</a></li>`;
         }
-    } else if (current_page > num_pages - Math.floor(items / 2)) {
-        for (var i = current_page - Math.ceil(items / 2); i <= num_pages; i++) {
-            li_tag += `<li class="page-item" value="${i}">
-                        <a class="page-link">${i}</a>
-                    </li>`;
+        $('#page_navigation').html(html_prev + html_pages + html_next);
+
+        $('.page-item').removeClass('active d-none');
+
+        // xử lý css cho pagination
+        if (number_of_pages > 0) {
+
+            $('.page-item.page').eq(current_page).addClass('active')
+
+
+            if (number_of_pages <= pages) {
+                // khi số trang <= pages
+                $('.page-item.prev').addClass('d-none');
+                $('.page-item.next').addClass('d-none');
+            } else {
+                // khi số trang > pages
+                // css cho nút prev và next
+                if (current_page == 0) {
+                    $('.page-item.prev').addClass('disabled');
+                    $('.page-item.page').addClass('d-none').slice(current_page, current_page + pages).removeClass('d-none');
+                } else if (current_page >= number_of_pages - Math.floor(pages / 2)) {
+                    $('.page-item.next').addClass('disabled');
+                    $('.page-item.page').addClass('d-none').slice(current_page - Math.ceil(pages / 2), number_of_pages).removeClass('d-none');
+                } else {
+                    $('.page-item.page').addClass('d-none').slice(current_page - Math.floor(pages / 2), current_page + Math.ceil(pages / 2)).removeClass('d-none');
+                }
+            }
+        } else {
+            // nếu số page = 0 ẩn hết
+            console.log('0');
+            $('.page-item').addClass('d-none');
         }
         
-    } else {
-        for (var i = current_page - Math.floor(items / 2); i <= current_page + Math.floor(items / 2); i++) {
-            li_tag += `<li class="page-item" value="${i}">
-                        <a class="page-link">${i}</a>
-                    </li>`;
-        }
-    }
-    html = `<li class="page-item prev">
-                <span class="page-link" tabindex="-1">Previous</span>
-            </li>`
-        + li_tag +
-        `<li class="page-item next">
-                <span class="page-link">Next</span>
-            </li>`;
-    $(".pagination").html(html);
-
-    //xử lý add class active
-    var pages = $(".pagination li[class=page-item]");
-    pages.each(function () {
-        if ($(this).attr('value') == current_page) {
-            $(this).addClass('active');
-        }
-    })
-
-    //add class disabled
-    if (current_page === 1 && current_page === num_pages) {
-        $('.prev').addClass('disabled');
-        $('.next').addClass('disabled');
-    } else if (current_page === 1) {
-        $('.prev').addClass('disabled');
-        $('.next').removeClass('disabled');
-    } else if (current_page === num_pages) {
-        $('.prev').removeClass('disabled');
-        $('.next').addClass('disabled');
+        
     }
 
+    return mol;
+})();
+
+function filData(data, name, language, topic) {
+    var dataFil = data;
+    if (name != '') {
+        dataFil = data.filter(function (item) {
+            return (item.name.toLowerCase().search(name) != -1 ? true : false);
+        })
+    }
+    if (language != '') {
+        dataFil = dataFil.filter(function (item) {
+            return (item.language.toLowerCase().search(language) != -1 ? true : false);
+        })
+    }
+    if (topic != '') {
+        dataFil = dataFil.filter(function (item) {
+            return (item.topic.toLowerCase().search(topic) != -1 ? true : false);
+        })
+    }
+    console.log(dataFil);
+    return dataFil;
 }
-
 
 function rendView(data) {
     var html = data.map(x => {
