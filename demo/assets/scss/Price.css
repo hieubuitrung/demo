@@ -20,6 +20,15 @@
   font-size: 16px;
   margin-top: 8px; }
 
+.price__search nav {
+  padding: 12px 16px; }
+  .price__search nav form {
+    width: 100%; }
+    .price__search nav form input {
+      flex: 1; }
+    .price__search nav form button:hover {
+      background-color: #519546; }
+
 .price .price__table thead th {
   color: #fff;
   background-color: #1c676b;

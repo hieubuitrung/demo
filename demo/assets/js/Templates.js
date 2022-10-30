@@ -6,7 +6,7 @@ var Templates = (function () {
         var data = mol.getData();
         var dataFil = data;
         var name = '', language = '', topic = '';
-        var show_per_page = 3;
+        var show_per_page = 6;
         var pages = 3;
         var current_page = 0;
         var number_of_items = data.length;
