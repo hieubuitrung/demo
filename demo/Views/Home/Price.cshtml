@@ -9,7 +9,6 @@
 }
 
 @section scripts {
-    <script src="~/assets/js/Templates.js"></script>
     <script src="~/assets/js/Price.js"></script>
 }
 
@@ -18,6 +17,14 @@
         <div class="price__title">
             <h2>Bảng giá template</h2>
             <p>Chỉ với chi phí rất thấp doanh nghiệp của bạn đã sở hữu những template nổi bật được nhiều doanh nghiệp có tiếng tin dùng.</p>
+        </div>
+        <div class="price__search">
+            <nav class="navbar navbar-light bg-light">
+                <form class="form-inline">
+                    <input id="key-word" class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa cần tìm kiếm" aria-label="Search">
+                    <button id="btn-search" class="btn btn-outline-success my-2 my-sm-0" type="button">Tìm kiếm</button>
+                </form>
+            </nav>
         </div>
         <table class="table table-hover table-bordered price__table">
             <thead>
@@ -39,8 +46,19 @@
                     <th scope="col">Chức năng</th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+                @*rend data*@
+            </tbody>
         </table>
+
+        @*pagination*@
+        <div class="templates__pagination">
+            <nav aria-label="Page navigation example">
+                <ul id="page_navigation" class="pagination justify-content-end">
+                
+                </ul>
+            </nav>
+        </div>
         <!-- Large modal -->
 
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

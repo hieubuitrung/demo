@@ -3,7 +3,7 @@ var Templates = (function () {
     var mol = {}
     mol.init = function () {
         var B = $('body');
-        var data = mol.getData();
+        var data = Main.getData();
         var dataFil = data;
         var name = '', language = '', topic = '';
         var show_per_page = 3;
@@ -13,7 +13,7 @@ var Templates = (function () {
         var number_of_pages = Math.ceil(number_of_items / show_per_page);
 
         rendView(data);
-        mol.pagination(data, current_page, show_per_page, pages);
+        Main.pagination(data, current_page, show_per_page, pages);
 
         B.delegate('#name-form', 'keydown', function (e) {
             name = e.target.value.trim().toLowerCase();
@@ -28,7 +28,7 @@ var Templates = (function () {
                 // phân trang
                 current_page = 0;
                 $('.page-item.next').removeClass('disabled');
-                mol.pagination(dataFil, current_page, show_per_page, pages);
+                Main.pagination(dataFil, current_page, show_per_page, pages);
             }
         })
 
@@ -42,7 +42,7 @@ var Templates = (function () {
             // phân trang
             current_page = 0;
             $('.page-item.next').removeClass('disabled');
-            mol.pagination(dataFil, current_page, show_per_page, pages);
+            Main.pagination(dataFil, current_page, show_per_page, pages);
         })
 
         B.delegate('#topic', 'change', function (e) {
@@ -54,7 +54,7 @@ var Templates = (function () {
             // phân trang
             current_page = 0;
             $('.page-item.next').removeClass('disabled');
-            mol.pagination(dataFil, current_page, show_per_page, pages)
+            Main.pagination(dataFil, current_page, show_per_page, pages)
         })
 
         B.delegate('.page-item.prev', 'click', function (e) {
@@ -63,7 +63,7 @@ var Templates = (function () {
             if (current_page > 0) {
                 current_page--;
                 $('.page-item.next').removeClass('disabled');
-                mol.pagination(dataFil, current_page, show_per_page, pages);
+                Main.pagination(dataFil, current_page, show_per_page, pages);
             } else {
                 
             }
@@ -75,7 +75,7 @@ var Templates = (function () {
             if (current_page < number_of_pages - 1) {
                 current_page++;
                 $('.page-item.prev').removeClass('disabled');
-                mol.pagination(dataFil, current_page, show_per_page, pages);
+                Main.pagination(dataFil, current_page, show_per_page, pages);
             } else {
                
             }
@@ -83,82 +83,14 @@ var Templates = (function () {
 
         B.delegate('.page-item.page', 'click', function (e) {
             current_page = parseInt($(this).attr('value'));
-            mol.pagination(dataFil, current_page, show_per_page, pages);
+            Main.pagination(dataFil, current_page, show_per_page, pages);
         })
 
     }
 
-    mol.getData = function () {
-        var data = '';
-        $.ajax({
-            async: false,
-            type: 'GET',
-            dataType: "json",
-            url: "https://634388b23f83935a7854d4e6.mockapi.io/api/forms",
-            success: function (d) {
-                data = d;
-            },
-            error: function () {
-                alert('error');
-            }
-        })
-        return data;
-    }
+    
 
-    // phân trang
-    mol.pagination = function (data, current_page, show_per_page, pages) {
-        var number_of_pages = Math.ceil(data.length / show_per_page);
-
-        // css for item template
-        $('.templates__forms__group--item').addClass('d-none').slice(current_page * show_per_page, (current_page + Math.floor(pages / 2)) * show_per_page).removeClass('d-none');
-
-        var html_prev = `<li class="page-item prev">
-                <button class="page-link" tabindex="-1">Previous</button>
-            </li>`;
-        var html_next = `<li class="page-item next">
-                <button class="page-link">Next</button>
-            </li>`;
-
-        // rend number_page
-        var html_pages = ``;
-        for (var i = 0; i < number_of_pages; i++) {
-            html_pages += `<li class="page-item page" value="${i}"><a class="page-link">${i + 1}</a></li>`;
-        }
-        $('#page_navigation').html(html_prev + html_pages + html_next);
-
-        $('.page-item').removeClass('active d-none');
-
-        // xử lý css cho pagination
-        if (number_of_pages > 0) {
-
-            $('.page-item.page').eq(current_page).addClass('active')
-
-
-            if (number_of_pages <= pages) {
-                // khi số trang <= pages
-                $('.page-item.prev').addClass('d-none');
-                $('.page-item.next').addClass('d-none');
-            } else {
-                // khi số trang > pages
-                // css cho nút prev và next
-                if (current_page == 0) {
-                    $('.page-item.prev').addClass('disabled');
-                    $('.page-item.page').addClass('d-none').slice(current_page, current_page + pages).removeClass('d-none');
-                } else if (current_page >= number_of_pages - Math.floor(pages / 2)) {
-                    $('.page-item.next').addClass('disabled');
-                    $('.page-item.page').addClass('d-none').slice(current_page - Math.ceil(pages / 2), number_of_pages).removeClass('d-none');
-                } else {
-                    $('.page-item.page').addClass('d-none').slice(current_page - Math.floor(pages / 2), current_page + Math.ceil(pages / 2)).removeClass('d-none');
-                }
-            }
-        } else {
-            // nếu số page = 0 ẩn hết
-            console.log('0');
-            $('.page-item').addClass('d-none');
-        }
-        
-        
-    }
+    
 
     return mol;
 })();

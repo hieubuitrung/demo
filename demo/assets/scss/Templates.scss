@@ -143,6 +143,10 @@
                         background-color: #fff;
                         box-shadow: 0 1px 6px #898989;
                         text-decoration: none;
+                        /*khi text dài va bi nhay xuong dong*/
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
                     }
 
                     > a:hover {
